@@ -59,8 +59,11 @@ namespace WinUiTest
 
         private async void SelectedItem(object sender, SelectionChangedEventArgs e)
         {
-            string d = listViewDates.SelectedItem.ToString();
-            await ShowDialog(this.Content.XamlRoot, "Gewähltes Datum", "Du hast "+d+" gewählt! ", "OK");  
+            string? date = ViewModel.SelectedText;
+            if (date != null)
+            {
+                await ShowDialog(this.Content.XamlRoot, "Gewähltes Datum", "Du hast " + date + " gewählt! ", "OK");
+            }
             return;
         }
     }

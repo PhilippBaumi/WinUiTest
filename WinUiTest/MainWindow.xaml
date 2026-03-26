@@ -29,6 +29,7 @@
             Click="AddToList"/>
         <ListView x:Name="listViewDates"
                   ItemsSource="{x:Bind ViewModel.Dates}"
+                  SelectedItem="{x:Bind ViewModel.SelectedText, Mode=TwoWay}"
                   SelectionChanged="SelectedItem"
                   SelectionMode="Single"
                   Margin="64,22,28,36">

@@ -8,6 +8,7 @@ namespace WinUiTest
     public class ViewModel : INotifyPropertyChanged
     {
         private DateTimeOffset selectedDate;
+        private string? selectedText;
         public ObservableCollection<string> Dates { get; } = new();
 
         public DateTimeOffset SelectedDate
@@ -19,6 +20,18 @@ namespace WinUiTest
                 {
                     selectedDate = value;
                     OnPropertyChanged();
+                }
+            }
+        }
+
+        public string? SelectedText
+        {
+            get=> selectedText;
+            set
+            {
+                if(selectedText != value)
+                {
+                    selectedText = value;
                 }
             }
         }
