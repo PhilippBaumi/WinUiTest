@@ -39,7 +39,7 @@ namespace WinUiTest
             string date = dt.ToString("dd.MM.yyyy");
             if (ViewModel.Dates.Contains(date))
             {
-                await ShowDialog(this.Content.XamlRoot, "Datum vorhanden", "Datum bereits vorhaden", "OK");
+                await ShowDialog(this.Content.XamlRoot, "Datum vorhanden", "Datum "+date+" bereits vorhaden", "OK");
                 return;
             }
            ViewModel.Dates.Add(date);
@@ -59,8 +59,8 @@ namespace WinUiTest
 
         private async void SelectedItem(object sender, SelectionChangedEventArgs e)
         {
-            DateTimeOffset date=ViewModel.SelectedDate;
-            await ShowDialog(this.Content.XamlRoot, "Gewähltes Datum", date.ToString("dd.MM.yyyy"), "OK");  
+            string d = listViewDates.SelectedItem.ToString();
+            await ShowDialog(this.Content.XamlRoot, "Gewähltes Datum", "Du hast "+d+" gewählt! ", "OK");  
             return;
         }
     }
