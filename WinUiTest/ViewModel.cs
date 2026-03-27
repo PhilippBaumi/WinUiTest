@@ -32,6 +32,7 @@ namespace WinUiTest
                 if(selectedText != value)
                 {
                     selectedText = value;
+                    OnPropertyChanged();
                 }
             }
         }
