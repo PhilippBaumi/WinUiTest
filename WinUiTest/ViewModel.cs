@@ -26,10 +26,10 @@ namespace WinUiTest
 
         public string? SelectedText
         {
-            get=> selectedText;
+            get => selectedText;
             set
             {
-                if(selectedText != value)
+                if (selectedText != value)
                 {
                     selectedText = value;
                     OnPropertyChanged();
